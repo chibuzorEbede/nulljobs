@@ -24,7 +24,7 @@ const AppBar = ({ title = "NullJobs" }) => {
 
 
   return (
-    <header className='bg-black text-yellow-500 dark:bg-white dark:text-black p-5 flex justify-between items-center md:rounded-bl-3xl'>
+    <header className='bg-black text-yellow-500 dark:bg-white dark:text-black p-5 flex justify-between items-center md:rounded-bl-3xl min-h-[20vh]'>
       <div className='text-3xl font-bold'>{title}</div>
       <div className='flex items-center justify-around gap-3'>
         <MdLightMode />

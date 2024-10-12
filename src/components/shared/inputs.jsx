@@ -2,7 +2,10 @@ import React from 'react'
 
 const Inputs = () => {
   return (
-    <div>Inputs</div>
+    <form>
+
+
+    </form>
   )
 }
 

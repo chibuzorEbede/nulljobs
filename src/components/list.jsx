@@ -1,8 +1,19 @@
 import React from 'react'
+import ListTile from './list-tile'
+import Button from './shared/button'
 
-const List = () => {
+const List = ({ data }) => {
   return (
-    <div>List</div>
+
+    <>
+      <main className='p-5 pt-12 flex gap-10 flex-col md:grid md:grid-cols-2 lg:grid-cols-3'>
+        {data.map((jobItem) => <ListTile key={jobItem.id} data={jobItem} />)}
+
+      </main>
+      <aside className=' text-center pb-12'><Button text={`load more`}/></aside>
+    </>
+
+
   )
 }
 

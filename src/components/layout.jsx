@@ -2,7 +2,7 @@ import React from 'react'
 
 const Layout = ({children}) => {
   return (
-    <div>{children}</div>
+    <div className='bg-slate-50 '>{children}</div>
   )
 }
 
