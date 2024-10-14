@@ -40,3 +40,13 @@ useState Hooks
 
 - On desktop input, align inputs to flex-start
 - add margin bottom to footer
+
+## Inspiration and Credits
+
+- ### UI
+
+frontend mentors design challenge
+
+- ### svgbackground
+
+<a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
