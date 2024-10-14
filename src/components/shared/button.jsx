@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
 
-const Button = ({text}) => {
+const Button = ({ text }) => {
   return (
-    <button className='p-3 bg-yellow-500 dark:bg-white rounded-md capitalize'>{text}</button>
-  )
-}
+    <button className=" p-3 bg-rose-800 text-white  hover:scale-110 transition-all rounded-md capitalize">
+      {text}
+    </button>
+  );
+};
 
-export default Button
+export const ButtonSecondary = ({ text }) => {
+  return (
+    <button className=" p-3 bg-rose-700 text-white hover:scale-110 transition-all rounded-md capitalize">
+      {text}
+    </button>
+  );
+};
+
+export default Button;
