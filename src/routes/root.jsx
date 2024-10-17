@@ -1,22 +1,39 @@
-import '../index.css'
-import Layout from '../components/layout'
-import AppBar from '../components/app-bar'
-import FilterInput from '../components/shared/filter-input'
-import List from '../components/list'
-import DesktopSearch from '../components/desktop-search'
-import data from "../data/index.json"
+import "../index.css";
+import Layout from "../components/layout";
+import AppBar from "../components/app-bar";
+import FilterInput from "../components/shared/filter-input";
+import List from "../components/list";
+import DesktopSearch from "../components/desktop-search";
+import Loading from "../components/shared/loading";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
+const Root = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
-const Root = ()=>{
-    return (
-        <Layout>
-            <AppBar/>
-            <FilterInput/>
-            <DesktopSearch/>
-            <List data={data}/>
-        </Layout>
-    )
-}
+  //fetch the initial data once from the backend
+  const liveUrl = import.meta.env.VITE_LIVE_URL;
+  const localUrl = `http://localhost:3002/job-listings`;
 
+  useEffect(() => {
+    axios
+      .get(liveUrl)
+      .then((response) => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
-export default Root
+  return (
+    <Layout>
+      <AppBar />
+      <FilterInput />
+      <DesktopSearch />
+      {loading ? <Loading /> : <List data={data} />}
+    </Layout>
+  );
+};
+
+export default Root;
