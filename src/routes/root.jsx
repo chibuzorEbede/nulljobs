@@ -20,7 +20,7 @@ const Root = () => {
     axios
       .get(liveUrl)
       .then((response) => {
-        setData(response.data.jobs);
+        setData(response.data);
         setLoading(false);
       })
       .catch((err) => console.error(err));
