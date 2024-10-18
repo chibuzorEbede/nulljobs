@@ -13,16 +13,14 @@ const Root = () => {
   const [data, setData] = useState([]);
 
   //fetch the initial data once from the backend
-  //   const liveUrl = import.meta.env.VITE_LIVE_URL;
-  const liveUrl = `https://himalayas.app/jobs/api?limit=20&offset=0`;
-  const localUrl = `http://localhost:3002/job-listings`;
+  const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/job-listings`;
+  //   const localUrl = `http://localhost:3002/job-listings`;
 
   useEffect(() => {
     axios
-      .get(liveUrl, {})
+      .get(liveUrl)
       .then((response) => {
-        console.log(JSON.parse(response.data).jobs);
-        setData(JSON.parse(response.data).jobs);
+        setData(response.data);
         setLoading(false);
       })
       .catch((err) => console.error(err));

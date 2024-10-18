@@ -20,7 +20,7 @@ const ListTile = ({ data }) => {
     >
       <LogoAvatar src={companyLogo} company={companyName} />
       <p className="text-slate-400  text-sm flex items-center gap-2 pt-3">
-        <span>{pubDate + " ago"} </span>
+        <span>{new Date(pubDate * 1000).getMinutes() + "s ago"} </span>
         <span>.</span>
         <span>{employmentType}</span>
       </p>
