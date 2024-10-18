@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="87.107643mm"
+   height="77.377533mm"
+   viewBox="0 0 87.107643 77.377533"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <font
+       horiz-adv-x="1000"
+       id="font2"
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       vert-origin-x="512"
+       vert-origin-y="768"
+       vert-adv-y="1024">
+      <font-face
+         units-per-em="1000"
+         ascent="750"
+         cap-height="600"
+         x-height="400"
+         descent="200"
+         id="font-face2"
+         font-family="SVGFont 1" />
+      <missing-glyph
+         d="M0,0h1000v1000h-1000z"
+         id="missing-glyph2" />
+    </font>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-37.530418,-27.80031)">
+    <rect
+       style="fill:#9f1239;fill-opacity:1;stroke-width:0.264583"
+       id="rect1"
+       width="87.107643"
+       height="77.377533"
+       x="37.530418"
+       y="27.80031" />
+    <text
+       xml:space="preserve"
+       style="font-size:34.0422px;fill:#9f1239;fill-opacity:1;stroke-width:0.773683"
+       x="57.022202"
+       y="78.208496"
+       id="text2"
+       transform="scale(1.0419348,0.95975295)"><tspan
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.0422px;font-family:Verdana;-inkscape-font-specification:'Verdana Bold';fill:#ffffff;stroke-width:0.773683"
+         x="57.022202"
+         y="78.208496">Nj</tspan></text>
+  </g>
+</svg>
