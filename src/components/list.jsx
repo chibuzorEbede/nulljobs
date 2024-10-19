@@ -8,9 +8,10 @@ const List = ({ data }) => {
 
   const loadMoreJobs = () => {
     const localUrl = `http://localhost:3002/get-more`;
+    const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/get-more`;
 
     axios
-      .get(localUrl)
+      .get(liveUrl)
       .then((response) => setLoadMoreData(loadMoreData.concat(response.data)))
       .catch((err) => console.log(err));
 

@@ -18,7 +18,7 @@ const Root = () => {
 
   useEffect(() => {
     axios
-      .get(localUrl)
+      .get(liveUrl)
       .then((response) => {
         setData(response.data);
         setLoading(false);
