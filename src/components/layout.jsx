@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div className=" bg-slate-50 dark:bg-slate-950 ">
       {children}
-      <Analytics />
+      {/* <Analytics /> */}
       <Branding />
     </div>
   );

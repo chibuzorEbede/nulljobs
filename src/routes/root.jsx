@@ -14,11 +14,11 @@ const Root = () => {
 
   //fetch the initial data once from the backend
   const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/job-listings`;
-  //   const localUrl = `http://localhost:3002/job-listings`;
+  const localUrl = `http://localhost:3002/job-listings`;
 
   useEffect(() => {
     axios
-      .get(liveUrl)
+      .get(localUrl)
       .then((response) => {
         setData(response.data);
         setLoading(false);
