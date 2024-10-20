@@ -17,7 +17,7 @@ const FilterInput = () => {
   return (
     <div className="md:hidden p-5 flex  items-center w-[90%] bg-white  dark:bg-slate-900 dark:text-rose-800 -mt-8 mx-auto rounded-md shadow-sm">
       <input
-        className="w-4/6 outline-none p-2  rounded-md text-rose-800"
+        className="w-4/6 outline-none p-2  rounded-md text-rose-800 placeholder:text-sm"
         type="text"
         name=""
         id=""

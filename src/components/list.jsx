@@ -7,6 +7,7 @@ const List = ({ data }) => {
   const [loadMoreData, setLoadMoreData] = useState(data);
 
   const loadMoreJobs = () => {
+    //base urls
     const localUrl = `http://localhost:3002/get-more`;
     const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/get-more`;
 

@@ -16,6 +16,13 @@ const Root = () => {
   const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/job-listings`;
   const localUrl = `http://localhost:3002/job-listings`;
 
+  //data manipulation functions
+
+  //take a data item and return the data filtered by the location parameter
+  const filterBasedOnUserInput = (data) => {
+    return data.filter((item) => item);
+  };
+
   useEffect(() => {
     axios
       .get(liveUrl)
@@ -30,7 +37,7 @@ const Root = () => {
     <Layout>
       <AppBar />
       <FilterInput />
-      <DesktopSearch />
+      <DesktopSearch onFilter={filterBasedOnUserInput} />
       {loading ? <Loading /> : <List data={data} />}
     </Layout>
   );
