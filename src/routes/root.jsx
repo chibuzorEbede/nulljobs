@@ -26,18 +26,21 @@ const Root = () => {
       itemData.title.toLowerCase().startsWith(searchQuery.toLowerCase())
     );
     console.log("filtered data is: ", filteredData);
+    console.log("type of filtered data is: ", filteredData.length);
     //TODO
-    //find a way to update the dat with the new one
+    //find a way to update the data state with the new one
     console.log("search query is ", searchQuery);
     console.log("original data is ", data);
 
+    setData();
     return filteredData;
   };
 
   //set initial data on page load
   useEffect(() => {
+    console.log("use effect running...");
     axios
-      .get(liveUrl)
+      .get(localUrl)
       .then((response) => {
         setData(response.data);
         setLoading(false);

@@ -13,9 +13,12 @@ const ListTile = ({ data }) => {
     companyLogo,
   } = data;
 
+  //replace special chars in the guid string to enable proper routing
+  const guid = data.guid.replace(/[^\w\s]/gi, "");
+
   return (
     <Link
-      to={`/job/2`}
+      to={`/job/${guid}`}
       className=" relative bg-white text-slate-900 dark:text-slate-50 px-6 py-6 dark:bg-slate-900 rounded-md shadow-sm capitalize"
     >
       <LogoAvatar src={companyLogo} company={companyName} />

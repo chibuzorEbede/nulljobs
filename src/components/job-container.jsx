@@ -2,14 +2,14 @@ import JobHeader from "./job-header";
 import JobBody from "./job-body";
 import JobFooter from "./job-footer";
 
-const JobContainer = () => {
+const JobContainer = ({ jobData }) => {
   return (
     <>
       <div className="w-[90%] md:w-[70%] mx-auto  -mt-8">
-        <JobHeader />
-        <JobBody />
+        <JobHeader headerData={jobData} />
+        <JobBody bodyData={jobData} />
       </div>
-      <JobFooter />
+      <JobFooter footerData={jobData} />
     </>
   );
 };
