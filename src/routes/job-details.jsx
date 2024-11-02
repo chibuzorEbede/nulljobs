@@ -7,7 +7,6 @@ import axios from "axios";
 
 const JobDetails = () => {
   const { jobId } = useParams();
-  console.log("job id is: ", jobId);
   const [jobDetailsData, setJobDetailsData] = useState([]);
   //use the jobId to make a call to the api and get the job details for the matching job in the api's job list
 
@@ -15,11 +14,9 @@ const JobDetails = () => {
   // const localUrl = `http://localhost:3002/details/${jobId}`;
   useEffect(() => {
     axios.get(liveUrl).then((response) => {
-      console.log("data from backend is ", response.data);
       setJobDetailsData(response.data);
     });
   }, []);
-  console.log("the jod data is: ", jobDetailsData);
   if (!jobDetailsData) {
     return null;
   }

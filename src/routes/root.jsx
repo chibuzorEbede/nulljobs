@@ -40,7 +40,7 @@ const Root = () => {
   useEffect(() => {
     console.log("use effect running...");
     axios
-      .get(localUrl)
+      .get(liveUrl)
       .then((response) => {
         setData(response.data);
         setLoading(false);
