@@ -1,7 +1,13 @@
 import { ButtonSecondary } from "./shared/button";
 
 const JobHeader = ({ headerData }) => {
-  const { companyLogo, companyName } = headerData[0];
+  console.log("header data is  ", headerData);
+  const { companyLogo, companyName, description } = headerData;
+  let d = document.createElement("html");
+  d.innerHTML = description;
+  let cLink = d.getElementsByTagName("a");
+  console.log("clink is", cLink);
+
   return (
     <section className=" flex flex-col md:flex-row  gap-4 md:gap-8 items-center md:justify-start bg-white dark:bg-slate-900 dark:text-slate-400 shadow-sm rounded-md">
       <img

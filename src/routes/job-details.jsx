@@ -10,13 +10,19 @@ const JobDetails = () => {
   console.log("job id is: ", jobId);
   const [jobDetailsData, setJobDetailsData] = useState([]);
   //use the jobId to make a call to the api and get the job details for the matching job in the api's job list
+
+  const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/details/${jobId}`;
+  // const localUrl = `http://localhost:3002/details/${jobId}`;
   useEffect(() => {
-    axios.get(`http://localhost:3002/details/${jobId}`).then((response) => {
+    axios.get(liveUrl).then((response) => {
       console.log("data from backend is ", response.data);
       setJobDetailsData(response.data);
     });
   }, []);
   console.log("the jod data is: ", jobDetailsData);
+  if (!jobDetailsData) {
+    return null;
+  }
   return (
     <Layout>
       <AppBar />
