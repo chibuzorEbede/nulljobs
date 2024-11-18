@@ -11,8 +11,6 @@ const JobBody = ({ bodyData }) => {
     .parseFromString(description, "text/html")
     .getElementsByTagName("a");
   const htmlDocArray = [...htmlDoc];
-  console.log("the parsed html is ");
-  console.log(htmlDocArray);
   return (
     <section className="mt-8 bg-white dark:bg-slate-900 dark:text-slate-50 rounded-md shadow-sm p-4 mb-8">
       <div className="w-full flex flex-col md:flex-row md:items-center">

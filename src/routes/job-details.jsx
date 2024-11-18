@@ -10,7 +10,7 @@ const JobDetails = () => {
   const [jobDetailsData, setJobDetailsData] = useState([]);
   //use the jobId to make a call to the api and get the job details for the matching job in the api's job list
 
-  const liveUrl = `https://e1da64a0-e051-4459-a7d7-fecf8bbe0557-00-bwc9ui1rn0v4.spock.replit.dev/details/${jobId}`;
+  const liveUrl = `https://apps.chibuzor.online/details/${jobId}`;
   // const localUrl = `http://localhost:3002/details/${jobId}`;
   useEffect(() => {
     axios.get(liveUrl).then((response) => {
