@@ -16,7 +16,7 @@ const List = ({ data }) => {
     call the api to generate more data and set as the current data value
     */
     axios
-      .get(localUrl)
+      .get(liveUrl)
       .then((response) => setLoadMoreData(loadMoreData.concat(response.data)))
       .catch((err) => console.log(err));
   };

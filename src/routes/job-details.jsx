@@ -13,7 +13,7 @@ const JobDetails = () => {
   const liveUrl = `https://apps.chibuzor.online/details/${jobId}`;
   const localUrl = `http://localhost:8000/details/${jobId}`;
   useEffect(() => {
-    axios.get(localUrl).then((response) => {
+    axios.get(liveUrl).then((response) => {
       setJobDetailsData(response.data);
     });
   }, []);
