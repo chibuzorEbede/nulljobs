@@ -1,7 +1,11 @@
 import Button from "./shared/button";
+import { getAccuratePublishTime } from "../utils";
+import { Link } from "react-router-dom";
 
 const JobBody = ({ bodyData }) => {
-  const { description, title } = bodyData;
+  //destructure the body data details
+  const { description, title, pubDate, locationRestrictions, applicationLink } =
+    bodyData;
 
   //process the description
   const parser = new DOMParser();
@@ -15,11 +19,17 @@ const JobBody = ({ bodyData }) => {
     <section className="mt-8 bg-white dark:bg-slate-900 dark:text-slate-50 rounded-md shadow-sm p-4 mb-8">
       <div className="w-full flex flex-col md:flex-row md:items-center">
         <div className="mr-auto">
-          <p className="text-xs text-slate-400">1w ago . part time</p>
+          <p className="text-xs text-slate-400">
+            {getAccuratePublishTime(pubDate)}
+          </p>
           <h2 className="text-2xl font-bold capitalize">{title}</h2>
-          <span className="text-xs text-slate-400">united kingdom</span>
+          <span className="text-xs text-slate-400">
+            {locationRestrictions?.[0]}
+          </span>
         </div>
-        <Button text={`apply now`} />
+        <Link to={applicationLink} target="_blank">
+          <Button text={`apply now`} />
+        </Link>
       </div>
 
       <aside>

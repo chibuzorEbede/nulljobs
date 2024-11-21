@@ -1,9 +1,11 @@
 import React from "react";
 import LogoAvatar from "./logo-avatar";
 import { Link } from "react-router-dom";
+import { getAccuratePublishTime } from "../utils";
 
 const ListTile = ({ data }) => {
   //destructure the data
+  //TODO add type checking for data properties
   const {
     companyName,
     pubDate,
@@ -23,7 +25,7 @@ const ListTile = ({ data }) => {
     >
       <LogoAvatar src={companyLogo} company={companyName} />
       <p className="text-slate-400  text-sm flex items-center gap-2 pt-3">
-        <span>{new Date(pubDate * 1000).getMinutes() + "s ago"} </span>
+        <span>{getAccuratePublishTime(pubDate)} </span>
         <span>.</span>
         <span>{employmentType}</span>
       </p>

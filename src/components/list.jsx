@@ -8,18 +8,17 @@ const List = ({ data }) => {
 
   const loadMoreJobs = () => {
     //base urls
-    const localUrl = `http://localhost:3002/get-more`;
+    const localUrl = `http://localhost:8000/get-more`;
     const liveUrl = `https://apps.chibuzor.online/get-more`;
-
-    axios
-      .get(liveUrl)
-      .then((response) => setLoadMoreData(loadMoreData.concat(response.data)))
-      .catch((err) => console.log(err));
 
     /*
     TODO
     call the api to generate more data and set as the current data value
     */
+    axios
+      .get(localUrl)
+      .then((response) => setLoadMoreData(loadMoreData.concat(response.data)))
+      .catch((err) => console.log(err));
   };
 
   return (

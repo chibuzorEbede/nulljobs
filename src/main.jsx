@@ -14,6 +14,7 @@ const router = createBrowserRouter([
   {
     path: "job/:jobId",
     element: <JobDetails />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

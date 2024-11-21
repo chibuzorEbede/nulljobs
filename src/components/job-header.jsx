@@ -1,10 +1,17 @@
+import { Link } from "react-router-dom";
 import { ButtonSecondary } from "./shared/button";
+import {
+  generateCompanyWebsiteLink,
+  getApproximateCompanyDomain,
+} from "../utils";
 
 const JobHeader = ({ headerData }) => {
+  if (!headerData) {
+    throw new Error("header data is not set");
+  }
   const { companyLogo, companyName, description } = headerData;
   let d = document.createElement("html");
   d.innerHTML = description;
-  let cLink = d.getElementsByTagName("a");
 
   return (
     <section className=" flex flex-col md:flex-row  gap-4 md:gap-8 items-center md:justify-start bg-white dark:bg-slate-900 dark:text-slate-400 shadow-sm rounded-md">
@@ -20,10 +27,14 @@ const JobHeader = ({ headerData }) => {
         <h3 className="font-bold text-2xl md:text-base capitalize dark:text-slate-50">
           {companyName}
         </h3>
-        <p className="text-sm text-slate-400">scoot.com</p>
+        <p className="text-sm text-slate-400">{`${getApproximateCompanyDomain(
+          companyName
+        )}`}</p>
       </div>
       <div className="pb-4 md:pb-0 md:ml-auto md:pr-4">
-        <ButtonSecondary text={`Company Site`} />
+        <Link to={`${generateCompanyWebsiteLink(companyName)}`} target="_blank">
+          <ButtonSecondary text={`Company Site`} />
+        </Link>
       </div>
     </section>
   );

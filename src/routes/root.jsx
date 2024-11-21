@@ -13,11 +13,25 @@ const Root = () => {
   const [data, setData] = useState([]);
   const [isFiltered, setIsFiltered] = useState(false);
 
-  //fetch the initial data once from the backend
+  //set the current url for use
   const liveUrl = `https://apps.chibuzor.online/job-listings`;
-  const localUrl = `http://localhost:3002/job-listings`;
+  const localUrl = `http://localhost:8000/job-listings`;
+
+  //set initial data on page load
+  useEffect(() => {
+    axios
+      .get(liveUrl)
+      .then((response) => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch((err) => console.log(new Error(err)));
+  }, []);
 
   //data manipulation functions
+  /*
+    TODO
+  */
 
   //take a data item and return the data filtered by the location parameter
   const filterBasedOnUserInput = (data, searchQuery) => {
@@ -35,19 +49,9 @@ const Root = () => {
     setData();
     return filteredData;
   };
-
-  //set initial data on page load
-  useEffect(() => {
-    console.log("use effect running...");
-    axios
-      .get(liveUrl)
-      .then((response) => {
-        setData(response.data);
-        setLoading(false);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
+  if (!data) {
+    throw new Error("please check connectivity, data is not set");
+  }
   return (
     <Layout>
       <AppBar />
