@@ -8,8 +8,8 @@ const List = ({ data }) => {
 
   const loadMoreJobs = () => {
     //base urls
-    const localUrl = `http://localhost:8000/get-more`;
-    const liveUrl = `https://apps.chibuzor.online/get-more`;
+    // const localUrl = `http://localhost:8000/get-more`;
+    const liveUrl = `https://aab4b050-390e-4fac-8044-04dd579b7cad.us-east-1.cloud.genez.io/get-more`;
 
     /*
     TODO

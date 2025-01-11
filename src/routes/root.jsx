@@ -14,8 +14,8 @@ const Root = () => {
   const [isFiltered, setIsFiltered] = useState(false);
 
   //set the current url for use
-  const liveUrl = `https://apps.chibuzor.online/job-listings`;
-  const localUrl = `http://localhost:8000/job-listings`;
+  const liveUrl = `https://aab4b050-390e-4fac-8044-04dd579b7cad.us-east-1.cloud.genez.io/job-listings`;
+  // const localUrl = `http://localhost:8000/job-listings`;
 
   //set initial data on page load
   useEffect(() => {
