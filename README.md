@@ -27,19 +27,14 @@ The application uses [React Router](https://reactrouter.com/) for navigation s
 
 ## State Management
 
-localStorage
-useState Hooks
+- localStorage
+- useState Hooks
 
 ## Incomplete
 
 - User can sign up to save jobs
 - User can sign up for notifications for new jobs
 - add vercel insights
-
-## Bugs
-
-- On desktop input, align inputs to flex-start
-- add margin bottom to footer
 
 ## Inspiration and Credits
 

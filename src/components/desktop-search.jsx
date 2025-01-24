@@ -3,7 +3,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import Button from "./shared/button";
 
-const DesktopSearch = ({ data, onFilter }) => {
+const DesktopSearch = ({ data }) => {
   //user input variables
   const IconSize = 20;
 
@@ -12,13 +12,11 @@ const DesktopSearch = ({ data, onFilter }) => {
       <IconTextInput
         icon={<IoMdSearch size={IconSize} />}
         text={`filter by title, companies, expertise...`}
-        filterData={onFilter}
         data={data}
       />
       <IconTextInput
         icon={<FaLocationDot size={IconSize} />}
         text={`filter by location`}
-        filterData={onFilter}
         data={data}
       />
       <IconCheckInput />
@@ -28,20 +26,15 @@ const DesktopSearch = ({ data, onFilter }) => {
 
 export default DesktopSearch;
 
-//local functions <Should extract these to their own files>
-
 //user text input
-const IconTextInput = ({ icon, text, filterData, data }) => {
-  //save the user input
+const IconTextInput = ({ icon, text, data }) => {
+  //hold user input data
   const [inputFieldText, setInputFieldText] = useState("");
 
   //function to handle updating of the input field
-  const handleChange = (e) => {
-    console.log("in the handle change function");
+  const handleInputChange = (e) => {
     setInputFieldText(e.target.value);
     console.log("input is ", inputFieldText);
-    //call a function to update the data variable
-    filterData(data, inputFieldText);
   };
 
   return (
@@ -53,7 +46,7 @@ const IconTextInput = ({ icon, text, filterData, data }) => {
         name=""
         id=""
         placeholder={text}
-        onChange={handleChange}
+        onChange={handleInputChange}
         value={inputFieldText}
       />
     </div>
