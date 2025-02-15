@@ -4,7 +4,7 @@ import Branding from "./branding";
 
 const Layout = ({ children }) => {
   return (
-    <div className=" bg-slate-50 dark:bg-slate-950 ">
+    <div className=" bg-slate-50 dark:bg-slate-950  min-h-screen">
       {children}
       {/* <Analytics /> */}
       <Branding />
