@@ -26,5 +26,6 @@ dist-ssr
 
 # design 
 
-DESIGN.md
+/DESIGN.md
+/todo.md
 
