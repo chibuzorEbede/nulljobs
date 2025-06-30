@@ -11,9 +11,9 @@ const JobDetails = () => {
   //use the jobId to make a call to the api and get the job details for the matching job in the api's job list
 
   const liveUrl = `https://aab4b050-390e-4fac-8044-04dd579b7cad.us-east-1.cloud.genez.io/details/${jobId}`;
-  // const localUrl = `http://localhost:8000/details/${jobId}`;
+  const localUrl = `http://localhost:8000/details/${jobId}`;
   useEffect(() => {
-    axios.get(liveUrl).then((response) => {
+    axios.get(localUrl).then((response) => {
       setJobDetailsData(response.data);
     });
   }, []);

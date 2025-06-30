@@ -8,7 +8,7 @@ const List = ({ data }) => {
 
   const loadMoreJobs = () => {
     //base urls
-    // const localUrl = `http://localhost:8000/get-more`;
+    const localUrl = `http://localhost:8000/get-more`;
     const liveUrl = `https://aab4b050-390e-4fac-8044-04dd579b7cad.us-east-1.cloud.genez.io/get-more`;
 
     /*
@@ -16,7 +16,7 @@ const List = ({ data }) => {
     call the api to generate more data and set as the current data value
     */
     axios
-      .get(liveUrl)
+      .get(localUrl)
       .then((response) => setLoadMoreData(loadMoreData.concat(response.data)))
       .catch((err) => console.log(err));
   };
